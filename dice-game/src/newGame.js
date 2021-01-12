@@ -8,7 +8,7 @@ function NewGame(props) {
     }
 
     return (
-        <button className='newGameButton' onClick={startOver} > New game</ button>
+        <button className='newGameButton' onClick={startOver} >Start new game</ button>
     )
 }
 

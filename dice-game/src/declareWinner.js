@@ -1,10 +1,4 @@
 import React from 'react';
-import DiceOne from './img/diceOne.png';
-import DiceTwo from './img/diceTwo.png';
-import DiceThree from './img/diceThree.png';
-import DiceFour from './img/diceFour.png';
-import DiceFive from './img/diceFive.png';
-import DiceSix from './img/diceSix.png';
 
 function highestScore(totalUser, totalComputer, lastRoll) {
     let winner = '';
@@ -29,11 +23,12 @@ function DeclareWinner(props) {
     const totalScoreComputer = (props.computerDieOne + props.computerDieTwo + props.computerDieThree);
 
     const won = highestScore(props.userDieOne + props.userDieTwo + props.userDieThree, props.computerDieOne + props.computerDieTwo + props.computerDieThree, props.computerDieThree)
+    
 
     return (
         <section className="scoreContainer">
             <section className="userScore">
-                <h2>You</h2>
+                <h3>You</h3>
                 <div className="scoreUserComputer">
                     <div className="diceIcon">
                         <p>{props.userDieOne}</p>
@@ -54,7 +49,7 @@ function DeclareWinner(props) {
             </section>
 
             <section className="computerScore">
-                <h2>Computer</h2>
+                <h3>Computer</h3>
                 <div className="scoreUserComputer">
                     <div className="diceIcon">
                         <p>{props.computerDieOne}</p>
@@ -74,7 +69,7 @@ function DeclareWinner(props) {
                 </div>
             </section>
             <div className="winner">
-                <h2>{won}</h2>
+                <h3>{won}</h3>
             </div>
         </section>
 

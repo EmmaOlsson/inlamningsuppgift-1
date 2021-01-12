@@ -21,8 +21,6 @@ class App extends React.Component {
       dieOneRolled: false,
       dieTwoRolled: true,
       dieThreeRolled: true,
-
-      showWinner: ''
     }
     this.rollFirstDie = this.rollFirstDie.bind(this);
     this.rollSecondDie = this.rollSecondDie.bind(this);
@@ -47,12 +45,12 @@ class App extends React.Component {
   // User
   rollFirstDie(event) {
     const randomNumberUserOne = Math.round(Math.random() * 5);
-    this.setState({ userDieOne: this.state.randomNumber[randomNumberUserOne], dieOneRolled: true, dieTwoRolled: false, showWinner: false});
+    this.setState({ userDieOne: this.state.randomNumber[randomNumberUserOne], dieOneRolled: true, dieTwoRolled: false });
     this.randomComputerDieOne();
   }
   rollSecondDie(event) {
     const randomNumberUserTwo = Math.round(Math.random() * 5);
-    this.setState({ userDieTwo: this.state.randomNumber[randomNumberUserTwo], dieTwoRolled: true, dieThreeRolled: false, shoWinner: false });
+    this.setState({ userDieTwo: this.state.randomNumber[randomNumberUserTwo], dieTwoRolled: true, dieThreeRolled: false });
     this.randomComputerDieTwo();
   }
   rollThirdDie(event) {
@@ -65,6 +63,8 @@ class App extends React.Component {
     return (
       <section className="container">
         <h1>Roll the dice</h1>
+        <h2>The player with the highest score wins!</h2>
+
         <DiceRoll rollDieOne={this.rollFirstDie} rollDieTwo={this.rollSecondDie} rollDieThree={this.rollThirdDie} computerDieOne={this.state.computerDieOne} computerDieTwo={this.state.computerDieTwo} computerDieThree={this.state.computerDieThree} dieOneRolled={this.state.dieOneRolled} dieTwoRolled={this.state.dieTwoRolled} dieThreeRolled={this.state.dieThreeRolled} />
 
         <DeclareWinner userDieOne={this.state.userDieOne} userDieTwo={this.state.userDieTwo} userDieThree={this.state.userDieThree} computerDieOne={this.state.computerDieOne} computerDieTwo={this.state.computerDieTwo} computerDieThree={this.state.computerDieThree} />
